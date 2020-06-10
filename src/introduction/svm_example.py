@@ -19,10 +19,10 @@ X, y = digits.data[:-10], digits.target[:-10]
 
 clf.fit(X, y)  # train
 
-print("Prediction: ", clf.predict(digits.data[-5]))  # predict what the 5th from last element is
+print("Prediction: ", clf.predict(digits.data[-5].rehape(1,-1)))  # predict what the 5th from last element is
 
 # visualization
-plt.imshow(digits.images[-5].rehape(1,-1), cmap=plt.cm.gray_r, interpolation='nearest')
+plt.imshow(digits.images[-5], cmap=plt.cm.gray_r, interpolation='nearest')
 plt.show()
 
 # adjusting gamma
