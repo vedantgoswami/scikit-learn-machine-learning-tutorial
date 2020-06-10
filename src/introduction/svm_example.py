@@ -22,7 +22,7 @@ clf.fit(X, y)  # train
 print("Prediction: ", clf.predict(digits.data[-5]))  # predict what the 5th from last element is
 
 # visualization
-plt.imshow(digits.images[-5], cmap=plt.cm.gray_r, interpolation='nearest')
+plt.imshow(digits.images[-5].rehape(1,-1), cmap=plt.cm.gray_r, interpolation='nearest')
 plt.show()
 
 # adjusting gamma
@@ -30,9 +30,9 @@ plt.show()
 # speed changes by factors of 10
 clf = svm.SVC(gamma=0.01, C=100)
 clf.fit(X, y)  # train
-print("Prediction: ", clf.predict(digits.data[-5]))  # predict what the 5th from last element is
+print("Prediction: ", clf.predict(digits.data[-5].rehape(1,-1))  # predict what the 5th from last element is
 
 # less accurate
 clf = svm.SVC(gamma=0.0001, C=100)
 clf.fit(X, y)  # train
-print("Prediction: ", clf.predict(digits.data[-5]))  # predict what the 5th from last element is
+print("Prediction: ", clf.predict(digits.data[-5].reshape(1,-1))  # predict what the 5th from last element is
